@@ -4,10 +4,10 @@ import os
 def procesar_datos_us_open():
     """Procesa el archivo CSV y filtra las columnas relacionadas con el US Open."""
     # Ruta del archivo original en el directorio raw
-    raw_csv_path = os.path.join("raw", "atp_tennis.csv")
+    raw_csv_path = os.path.join("data","raw", "atp_tennis.csv")
     
     # Ruta del archivo procesado en el directorio processed
-    processed_csv_path = os.path.join("processed", "us_open_data.csv")
+    processed_csv_path = os.path.join("data","processed", "us_open_data.csv")
     
     # Cargar los datos desde el archivo CSV
     try:
@@ -24,7 +24,7 @@ def procesar_datos_us_open():
     us_open_data = us_open_data[us_open_data["Date"] >= "2021-01-01"]
     
     # Seleccionar columnas relevantes (ajusta según las columnas disponibles)
-    columnas_relevantes = ["Date", "Player_1", "Player_2", "Score","Winner", "Round", "Surface"]
+    columnas_relevantes = ["Date", "Player_1", "Player_2", "Score","Winner", "Round"]
     us_open_data = us_open_data[columnas_relevantes]
     
     # Crear el directorio processed si no existe
