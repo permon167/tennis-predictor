@@ -1,6 +1,6 @@
 # Predictor de Resultados de Partidos de Tenis
 
-Este proyecto tiene como objetivo desarrollar un modelo de aprendizaje automático que prediga los resultados de partidos de tenis basándose en estadísticas de los jugadores en partidos anteriores de los cuatro torneos Grand Slam: Abierto de Australia, Roland Garros, Wimbledon y US Open.
+Este proyecto tiene como objetivo desarrollar un modelo de aprendizaje automático que prediga los resultados de partidos de tenis basándose en estadísticas de los jugadores en partidos anteriores de los cuatro torneos Grand Slam: Abierto de Australia, Roland Garros, Wimbledon y US Open. (ahora mismo solo el US Open)
 
 ## Estructura del Proyecto
 
@@ -43,15 +43,15 @@ Este proyecto tiene como objetivo desarrollar un modelo de aprendizaje automáti
    pip install -r requirements.txt
    ```
 
-3. Prepara los datos:
-   - Coloca los archivos de datos en bruto en el directorio `data/raw`.
-   - Ejecuta el script de preprocesamiento de datos para limpiar y transformar los datos.
+3. Importar los datos:
+   - Coloca los archivos de datos en bruto en el directorio `data/raw` con python data/importar_datos.py
+   - Procesar los datos con los campos que nos interesan en `data/processed` con python/procesar_datos.py
 
 4. Entrena el modelo:
    - Utiliza el script `model_training.py` para entrenar el modelo de aprendizaje automático.
 
 5. Realiza predicciones:
-   - Utiliza el script `prediction.py` para realizar predicciones sobre nuevos datos de partidos.
+   - Utiliza el script `prediction.py` para realizar predicciones sobre nuevos datos de partidos. python src/prediction.py
 
 ## Guía de Uso
 
