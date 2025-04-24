@@ -1,6 +1,6 @@
 # Predictor de Resultados de Partidos de Tenis
 
-Este proyecto tiene como objetivo desarrollar un modelo de aprendizaje automático que prediga los resultados de partidos de tenis basándose en estadísticas de los jugadores en partidos anteriores de los cuatro torneos Grand Slam: Abierto de Australia, Roland Garros, Wimbledon y US Open. (ahora mismo solo el US Open)
+Este proyecto tiene como objetivo desarrollar un modelo de aprendizaje automático que prediga los resultados de partidos de tenis basándose en estadísticas de los jugadores en partidos anteriores.
 
 ## Estructura del Proyecto
 
@@ -19,12 +19,6 @@ Este proyecto tiene como objetivo desarrollar un modelo de aprendizaje automáti
   - **feature_engineering.py**: Funciones para crear nuevas características que mejoren el rendimiento del modelo.
   - **model_training.py**: Código para entrenar el modelo de aprendizaje automático.
   - **prediction.py**: Funciones para realizar predicciones utilizando el modelo entrenado.
-  
-- **tests/**: Pruebas unitarias para el proyecto.
-  - **test_data_preprocessing.py**: Pruebas unitarias para las funciones de preprocesamiento de datos.
-  - **test_feature_engineering.py**: Pruebas unitarias para las funciones de ingeniería de características.
-  - **test_model_training.py**: Pruebas unitarias para las funciones de entrenamiento del modelo.
-  - **test_prediction.py**: Pruebas unitarias para las funciones de predicción.
   
 - **requirements.txt**: Lista de dependencias necesarias para el proyecto.
 - **.gitignore**: Especifica los archivos y directorios que deben ser ignorados por el control de versiones.

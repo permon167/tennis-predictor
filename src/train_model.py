@@ -9,18 +9,21 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 from sklearn.preprocessing import StandardScaler
 from scipy.stats import uniform, randint
 
-# Cargar dataset
+# Cargar dataset y eliminar los primeros 1000 elementos
 df = pd.read_csv("data/processed/filtered.csv").dropna()
+df = df.iloc[1000:]  # Ignorar las primeras 1000 filas
 
 # 🏆 Variable objetivo
 y = (df["Winner"] == df["Player_1"]).astype(int)
 
-# 🔍 Variables predictoras (eliminando Court_indoor y Round_num)
+# 🔍 Variables predictoras (incluyendo recent_form_p1 y recent_form_p2)
 X = df[[ 
     "wins_surface_p1", 
     "wins_surface_p2", 
     "h2h_diff", 
-    "rank_diff"
+    "rank_diff", 
+    "recent_form_p1",  # Nueva columna
+    "recent_form_p2"   # Nueva columna
 ]]
 
 # Normalización de las características
