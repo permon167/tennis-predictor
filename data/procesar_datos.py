@@ -1,5 +1,6 @@
 import pandas as pd
 from collections import defaultdict
+import os
 
 # Cargar datos
 df = pd.read_csv("data/raw/atp_tennis.csv")
@@ -91,3 +92,22 @@ cols = [
 df[cols].to_csv("data/processed/filtered.csv", index=False)
 
 print("✅ Datos procesados guardados en data/processed/filtered.csv")
+
+# Crear un DataFrame para los H2H
+h2h_data = []
+
+for (player1, player2), (wins_p1, wins_p2) in h2h_wins.items():
+    h2h_data.append({
+        "Player_1": player1,
+        "Player_2": player2,
+        "Wins_Player_1": wins_p1,
+        "Wins_Player_2": wins_p2,
+        "H2H_Diff": wins_p1 - wins_p2
+    })
+
+h2h_df = pd.DataFrame(h2h_data)
+
+# Guardar el archivo CSV
+h2h_df.to_csv("data/processed/h2h_stats.csv", index=False)
+
+print("✅ Archivo H2H guardado en data/processed/h2h_stats.csv")
